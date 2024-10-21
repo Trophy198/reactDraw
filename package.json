@@ -2,7 +2,7 @@
   "name": "testing-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trophy198.github.io/reactDraw/",
+  "homepage": "https://Trophy198.github.io/reactDraw/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
