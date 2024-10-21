@@ -2,6 +2,7 @@
   "name": "testing-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://trophy198.github.io/reactDraw/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^13.5.0",
@@ -35,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^16.0.1"
+    "@testing-library/react": "^16.0.1",
+    "gh-pages": "^6.2.0"
   }
 }
