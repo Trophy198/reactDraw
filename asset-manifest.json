@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reactDraw/static/css/main.e6c13ad2.css",
+    "main.js": "/reactDraw/static/js/main.6464be12.js",
+    "static/js/453.c2a8ebcc.chunk.js": "/reactDraw/static/js/453.c2a8ebcc.chunk.js",
+    "index.html": "/reactDraw/index.html",
+    "main.e6c13ad2.css.map": "/reactDraw/static/css/main.e6c13ad2.css.map",
+    "main.6464be12.js.map": "/reactDraw/static/js/main.6464be12.js.map",
+    "453.c2a8ebcc.chunk.js.map": "/reactDraw/static/js/453.c2a8ebcc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6464be12.js"
+  ]
+}
