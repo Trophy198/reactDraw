@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const DrawingGame = () => {
   const [isDrawing, setIsDrawing] = useState(false);
   const [lines, setLines] = useState([]); 
+  const [range, setRange] = useState(2);
   const [currentLine, setCurrentLine] = useState(''); 
   const [color, setColor] = useState('#000000'); 
   const [currentColor, setCurrentColor] = useState('#000000'); 
@@ -15,6 +16,10 @@ const DrawingGame = () => {
     setCurrentColor(color);
   };
 
+  const handleStrokeWidthChange = (e) => {
+    setRange(e.target.value);
+  }
+
   const handleMouseMove = (e) => {
     if (!isDrawing) return;
 
@@ -24,7 +29,7 @@ const DrawingGame = () => {
 
   const handleMouseUp = () => {
     if (currentLine) {
-      setLines((prevLines) => [...prevLines, { path: currentLine, color: currentColor }]);
+      setLines((prevLines) => [...prevLines, { path: currentLine, color: currentColor, strokeWidth: range }]);
       setRedoStack([]);
     }
     setIsDrawing(false);
@@ -89,6 +94,11 @@ const DrawingGame = () => {
         style={{ position: 'absolute', top: 10, left: 10, zIndex: 10 }}
       />
 
+      <input type='range' step={1} min={2} max={60} value={range}
+        onChange={(e) => handleStrokeWidthChange(e)}
+       style={{ position: 'absolute', top: 13, left: 100, zIndex: 10 }}
+      />
+
       <svg
         style={{
           position: 'absolute',
@@ -103,7 +113,8 @@ const DrawingGame = () => {
             key={index}
             d={line.path}
             stroke={line.color}
-            strokeWidth="2"
+            strokeWidth={line.strokeWidth}
+            strokeLinecap='round'
             fill="none"
           />
         ))}
@@ -112,7 +123,8 @@ const DrawingGame = () => {
           <path
             d={currentLine}
             stroke={currentColor} 
-            strokeWidth="2"
+            strokeWidth={range}
+            strokeLinecap='round'
             fill="none"
           />
         )}
