@@ -75,6 +75,22 @@ const DrawingGame = () => {
   }, [isDrawing, currentLine]);
 
   return (
+    <>
+    <div style={{width:'100%',height:'5%', position:'absolute', backgroundColor:'yellow', top: 0, left: 0, zIndex:9999}}>
+    <input
+        type="color"
+        value={color}
+        onChange={(e) => setColor(e.target.value)}
+        style={{ position: 'absolute', top: 10, left: 10, zIndex: 10 }}
+      />
+      
+        <input type='range' step={1} min={2} max={60} value={range}
+        onChange={(e) => handleStrokeWidthChange(e)}
+       style={{ position: 'absolute', top: 13, left: 100, zIndex: 10 }}
+      />
+    </div>
+
+
     <div
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
@@ -87,18 +103,7 @@ const DrawingGame = () => {
         userSelect: 'none',
       }}
     >
-      <input
-        type="color"
-        value={color}
-        onChange={(e) => setColor(e.target.value)}
-        style={{ position: 'absolute', top: 10, left: 10, zIndex: 10 }}
-      />
-
-      <input type='range' step={1} min={2} max={60} value={range}
-        onChange={(e) => handleStrokeWidthChange(e)}
-       style={{ position: 'absolute', top: 13, left: 100, zIndex: 10 }}
-      />
-
+  
       <svg
         style={{
           position: 'absolute',
@@ -130,6 +135,7 @@ const DrawingGame = () => {
         )}
       </svg>
     </div>
+    </>
   );
 };
 
